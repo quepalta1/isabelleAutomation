@@ -17,7 +17,6 @@ with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
 
     msg = f'Subject: {subject}\n\n{body}'
 
-    smtp.sendmail(EMAIL_ADDRESS, EMAIL_ADDRESS, msg)
-
+    smtp.sendmail(EMAIL_ADDRESS, 'isabelle.kervaire@gmail.com', msg)
 
 
