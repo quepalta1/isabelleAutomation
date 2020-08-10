@@ -13,11 +13,11 @@ with smtplib.SMTP('mail.ellb.com.pe', 587) as smtp:
     # subject = 'Grab dinner this weekend'
     # body = 'How about dinner at 6 pm.'
 
-    msg =  """From: Isabelle Kervaire <ikervaire@ellb.com.pe>
-    To: Walter Pramer <wspramer@gmail.com>
-    Subject: Testtt
-    
-    Hola que tal 
+    msg = """From: Isabelle Kervaire <ikervaire@ellb.com.pe>
+    To: To Person <to@todomain.com>
+    Subject: SMTP e-mail test
+
+    This is a test e-mail message.
     """
 
     smtp.sendmail('ikervaire@ellb.com.pe', 'wspramer@gmail.com', msg)
