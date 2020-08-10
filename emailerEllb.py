@@ -1,20 +1,23 @@
 import os
 import smtplib
 
-EMAIL_ADDRESS = os.environ.get('EMAIL_USER')
-EMAIL_PASSWORD = os.environ.get('EMAIL_PASS')
 
 
-with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+with smtplib.SMTP('mail.ellb.com.pe', 587) as smtp:
     smtp.ehlo()
     smtp.starttls()
     smtp.ehlo()
 
-    smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+    smtp.login('ikervaire@ellb.com.pe', 'Peru2019')
 
-    subject = 'Grab dinner this weekend'
-    body = 'How about dinner at 6 pm.'
+    # subject = 'Grab dinner this weekend'
+    # body = 'How about dinner at 6 pm.'
 
-    msg = f'Subject: {subject}\n\n{body}'
+    msg =  """From: Isabelle Kervaire <ikervaire@ellb.com.pe>
+    To: Walter Pramer <wspramer@gmail.com>
+    Subject: Testtt
+    
+    Hola que tal 
+    """
 
-    smtp.sendmail(EMAIL_ADDRESS, EMAIL_ADDRESS, msg)
+    smtp.sendmail('ikervaire@ellb.com.pe', 'wspramer@gmail.com', msg)
